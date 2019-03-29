@@ -10,7 +10,7 @@ Visit https://tibber.com for more information
 For API documentation and demo access token, visit https://developer.tibber.com/explorer
 
 ## Build
-This project requires a Go version higher than 1.11
+Building this project requires a Go version higher than 1.11
 
 ```bash
 go build
@@ -47,6 +47,23 @@ curl localhost:9501
 ```
 
 ## Sample output (using demo access token)
+##### Excerpt using `grep ^tibber_`
+```
+tibber_current_energy_price{currency="",home_id="68e6938b-91a6-4199-a0d4-f24c22be87bb",type="energy"} 0
+tibber_current_energy_price{currency="",home_id="68e6938b-91a6-4199-a0d4-f24c22be87bb",type="tax"} 0
+tibber_current_energy_price{currency="SEK",home_id="c70dcbe5-4485-4821-933d-a8a86452737b",type="energy"} 0.3407
+tibber_current_energy_price{currency="SEK",home_id="c70dcbe5-4485-4821-933d-a8a86452737b",type="tax"} 0.1589
+tibber_home_info{address1="Kungsgatan 8",address2="",address3="",city="Stockholm",country="SE",home_id="c70dcbe5-4485-4821-933d-a8a86452737b",latitude="59.3362066",longitude="18.0675126",postal_code="11759",time_zone="Europe/Stockholm"} 1
+tibber_home_info{address1="Winterfell",address2="",address3="",city="Førde",country="NO",home_id="68e6938b-91a6-4199-a0d4-f24c22be87bb",latitude="61.457539",longitude="5.829413",postal_code="6812",time_zone="Europe/Oslo"} 1
+tibber_previous_hour_consumption_watt_hour{home_id="c70dcbe5-4485-4821-933d-a8a86452737b"} 0
+tibber_previous_hour_energy_price{currency="SEK",home_id="c70dcbe5-4485-4821-933d-a8a86452737b",type="energy"} 0.4164875
+tibber_previous_hour_energy_price{currency="SEK",home_id="c70dcbe5-4485-4821-933d-a8a86452737b",type="vat"} 0.0832975
+tibber_previous_hour_total_cost{currency="SEK",home_id="c70dcbe5-4485-4821-933d-a8a86452737b"} 0
+tibber_requests_total 2
+tibber_scrape_duration_seconds 0.122630018
+```
+
+##### Full sample
 ```
 # HELP go_gc_duration_seconds A summary of the GC invocation durations.
 # TYPE go_gc_duration_seconds summary
