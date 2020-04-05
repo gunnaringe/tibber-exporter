@@ -10,7 +10,7 @@ RUN upx /bin/tibber-exporter -9
 FROM scratch
 LABEL maintainer="Gunnar Inge G. Sortland <gunnaringe@gmail.com>"
 EXPOSE 9501
-COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=build /bin/tibber-exporter /tibber-exporter
 ENTRYPOINT ["/tibber-exporter"]
 CMD ["--help"]
